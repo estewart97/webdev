@@ -4,7 +4,7 @@
     width: $navbar-width;  
     background: $primary;  
     height: calc(100% - #{$page-header-height});  
-    position: absolute;  
+    position: fixed; 
 
     .navigation-item {  
         height: 60px;  
@@ -21,4 +21,4 @@
             border-left: 5px solid #ffffff;  
         }  
     }  
-}  
+} 
