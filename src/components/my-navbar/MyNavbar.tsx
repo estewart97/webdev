@@ -1,32 +1,58 @@
 import * as React from 'react';  
+import { Link } from 'react-router-dom'; 
 
-export default class MyNavbar extends React.Component {  
+interface MyNavbarState { 
+    selected: number 
+} 
 
-    render() {  
+interface MyNavbarLink {  
+    name: string  
+    path: string  
+}  
+
+interface MyNavbarProps {  
+    links: MyNavbarLink[]  
+} 
+
+export default class MyNavbar extends React.Component<MyNavbarProps,MyNavbarState> { 
+
+    constructor(props: MyNavbarProps) {  
+        super(props);  
+
+        this.state = {  
+            selected: 0  
+        }  
+    } 
+
+    private readonly updateSelected = (idx: number) => {  
+        this.setState({selected: idx});  
+    } 
+
+    render() {
         return (  
             <div className='my-navbar'>  
-                <div className='navigation-item selected'>  
-                    <p className='navigation-text'>  
-                        Page 1  
-                    </p>  
-                </div>  
-                <div className='navigation-item'>  
-                    <p className='navigation-text'>  
-                        Page 2  
-                    </p>  
-                </div>  
-                <div className='navigation-item'>  
-                    <p className='navigation-text'>  
-                        Page 3  
-                    </p>  
-                </div>  
-                <div className='navigation-item'>  
-                    <p className='navigation-text'>  
-                        Page 4  
-                    </p>  
-                </div>  
+                {  
+                    this.props.links.map((link, idx) => {  
+                        return (  
+                            <Link key={`link-${idx}`}to={link.path} onClick={ 
+                                () => this.updateSelected(idx) 
+                            }> 
+                                <div className={ 
+                                    `navigation-item 
+                                    ${this.state.selected === idx ? 
+                                    'selected' : 
+                                    ''}` 
+                                }>  
+                                    <p className='navigation-text'>  
+                                        {link.name}  
+                                    </p>  
+                                </div>  
+                            </Link>  
+                        )  
+                    })  
+                }  
             </div>  
         )  
     } 
 
-} 
+ }
