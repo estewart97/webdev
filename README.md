@@ -1,3 +1,5 @@
+Need node.js installed as well for this to work. Link in Alastairs docs.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
