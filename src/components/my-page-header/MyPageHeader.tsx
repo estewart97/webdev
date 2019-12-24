@@ -1,13 +1,13 @@
-import * as React from 'react'; 
- 
-export default class MyPageHeader extends React.Component { 
+import * as React from 'react';
 
-    render() { 
-        return ( 
-            <div className='my-page-header'> 
-                <h1 className='title'>React Tutorial App</h1> 
-            </div> 
-        ) 
-    } 
+export default class MyPageHeader extends React.Component {
 
-} 
+    render() {
+        return (
+            <div className='my-page-header'>
+                <h1 className='title'>Quack Capital</h1>
+            </div>
+        )
+    }
+
+}
