@@ -61,11 +61,10 @@ export default class Users extends React.Component<{}, UsersState> {
 
     componentDidMount() {
         fetch('https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole')
-            .then(res => res.json())
-            .then(data => {
-                this.setState({userData: data}) 
-            })
-            .catch(console.log)  
-    }    
-    
+        .then(res => res.json())
+        .then(data => {
+            this.setState({userData: data}) 
+        })
+        .catch(console.log)  
+    } 
 }

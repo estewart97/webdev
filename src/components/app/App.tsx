@@ -2,6 +2,7 @@ import * as React from 'react';
 import MyPageHeader from '../my-page-header/MyPageHeader';   
 import MyNavbar from '../my-navbar/MyNavbar'; 
 import Users from '../users/Users'; 
+import Chart from '../chart/Chart'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const links = [  
@@ -10,8 +11,8 @@ const links = [
       path: '/'  
     },  
     {  
-      name: 'Page 2',  
-      path: '/page2'  
+      name: 'Chart',  
+      path: '/chart'  
     },  
     {  
       name: 'Page 3',  
@@ -21,8 +22,8 @@ const links = [
       name: 'Page 4',  
       path: '/page4'  
     }  
-  ] 
-
+  ]
+  
 export default class App extends React.Component { 
 
     render() {  
@@ -32,8 +33,10 @@ export default class App extends React.Component {
                 <Router> 
                 <MyNavbar links={links}></MyNavbar>
                     <Switch>  
-                        <Route path="/page2">  
-                            <div className='my-page-content'>Page 2</div>  
+                        <Route path="/chart">  
+                            <div className='my-page-content'> 
+                                <Chart></Chart> 
+                            </div>  
                         </Route>  
                         <Route path="/page3">  
                             <div className='my-page-content'>Page 3</div>  
